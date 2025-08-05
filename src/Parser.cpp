@@ -96,8 +96,8 @@ bool Parser::loadChart() {
 }
 
 std::vector<std::string> Parser::calculateTiming(const std::vector<std::string>& measure, int measureIndex, double bpm, double offset) {
-    double measureSeconds = 4 * 60 / bpm; // Duration of one measure in seconds
-    double measureTiming = measureSeconds * measureIndex; // Timing of the current measure
+    double measureSeconds = 4 * 60 / bpm; // one measure in seconds
+    double measureTiming = measureSeconds * measureIndex; // try to time current measure
 
     std::vector<std::string> noteAndTimings;
     if (measure.empty()) return noteAndTimings;

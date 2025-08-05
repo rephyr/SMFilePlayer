@@ -1,10 +1,10 @@
 #include "../Include/Note.h"
 
-// constructor for a normal note
+// for a normal note
 Note::Note(int column, NoteType type, float startTime)
     : column(column), type(type), startTime(startTime), endTime(0) {}
 
-// constructor for hold or roll notes 
+// for hold or roll notes 
 Note::Note(int column, NoteType type, float startTime, float endTime)
     : column(column), type(type), startTime(startTime), endTime(endTime) {}
 
