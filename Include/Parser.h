@@ -4,33 +4,28 @@
 #include <string>
 #include <vector>
 #include <map>
-#include "Note.h"
 
-class Parser{
-    public:
-        Parser(const std::string& filepath);
+class Parser {
+public:
+    Parser(const std::string& filepath);
 
-        bool loadChart();
-
-        const std::vector<Note>& getNotes() const { return notes; }
-
-        const std::map<double, double>& getBpmChanges() const;
-
-        double getOffset() const;
-        
-        double getNoteTimeForColumn(int col, double bpm);
-
-        double getBPMAtTime(double time);
-
-        void parseMeasures(const std::string& chartData);
-
-    private: 
-        std::string filepath;                 
-        std::map<double, double> bpmChanges; // stores every bpm change, used for time calculations
-        std::vector<Note> notes;             // stores every note in the loaded chart
-        double offset;                       
-
-        float getNoteTimeFromColumn(int col, double bpm);
+    bool loadChart();
+    const std::map<std::string, std::vector<std::string>>& getDifficultyNotes() const;
+    const std::string& getTitle() const;
+    double getOffset() const;
+    double getBPM() const;
+    const std::map<double, double>& getBpmChanges() const;
+private:
+    std::string filepath;
+    std::string title;
+    double offset;
+    double bpm;
+    std::map<std::string, std::vector<std::string>> difficultyNotes;
+    bool isValidNoteRow(const std::string& line) const;
+    std::map<double, double> bpmChanges;
+    std::string trim(const std::string& str);
+    std::string convertNote(const std::string& line);
+    std::vector<std::string> calculateTiming(const std::vector<std::string>& measure, int measureIndex, double bpm, double offset);
 };
-#endif
- 
+
+#endif // PARSER_H
