@@ -27,7 +27,6 @@
    ```
 ## Limitations
 
-- Some games (including Etterna/StepMania) may block simulated input for anti-cheat reasons.  
-  The bot works in applications that accept simulated input, but may not work in all games.
+-  Etterna/StepMania block simulated input for anti-cheat reasons.
 
 - This limitation can be overcome by using a hardware macro device such as an Arduino or a programmable keyboard. These devices emulate real keyboard input at the hardware level, making their key presses indistinguishable from those of a physical keyboard and undetectable as simulated input by the game.
