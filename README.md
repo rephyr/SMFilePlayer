@@ -1,4 +1,4 @@
-## EtternaBot is a Windows-based bot framework for parsing and playing StepMania/Etterna `.sm` chart files with precise timing. It demonstrates chart parsing, timing synchronization, and simulated key input for rhythm games.
+## EtternaBot is a Windows-based bot framework for parsing and playing StepMania/Etterna `.sm` chart files.
 
 ## How It Works
 
@@ -6,7 +6,7 @@
    The bot reads a `.sm` file, extracts note rows, and calculates the exact time each note should be played.
 
  **Synchronization:**  
-   Press F8 (global hotkey) to start the bot. After a short delay, the bot sends Enter to start the chart in-game and begins playing notes in sync.
+   Press F8 to start the bot. After a short delay, the bot sends Enter to start the chart in-game and begins playing notes in sync.
 
  **Key Simulation:**  
    The bot uses the Windows API to simulate keypresses for each note (Q, W, E, R for columns, Enter to start).
