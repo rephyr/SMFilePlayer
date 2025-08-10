@@ -1,15 +1,16 @@
-## EtternaBot is a Windows-based bot framework for parsing and playing StepMania/Etterna `.sm` chart files.
+# SMfilePlayer 
 
-## How It Works
+SMfilePlater is a parser and playback engine for `.sm` rhythm game charts.
 
- **Chart Parsing:**  
-   The bot reads a `.sm` file, extracts note rows, and calculates the exact time each note should be played.
+This project parses `.sm` files and plays them back perfectly. To achieve this the project includes:
 
- **Synchronization:**  
-   Press F8 to start the bot. After a short delay, the bot sends Enter to start the chart in-game and begins playing notes in sync.
+- Chart parsin logic
 
- **Key Simulation:**  
-   The bot uses the Windows API to simulate keypresses for each note (Q, W, E, R for columns, Enter to start).
+- Playback engine with timing synchronization
+
+## Why I Built This
+
+I play a lot of rythm games that use `.sm` charts. I searched online but couldn’t find a bot like this, so I decided to build one myself. 
 
 ## Usage
 
@@ -19,14 +20,22 @@
    ```
 
  **Prepare your chart:**  
-   Place your `.sm` file in the `Charts/` directory and update the path in `main.cpp` if needed.
+   Place your `.sm` file in the `Charts/` directory and update the path in `main.cpp`.
 
  **Run the bot:**  
    ```sh
-   EtternaBot.exe
+   ./EtternaBot
    ```
 ## Limitations
 
--  Etterna/StepMania block simulated input for anti-cheat reasons. So this bot cannot be used in game as is. 
+- Etterna/StepMania implement anti-cheat measures that block simulated input, so this bot cannot be used in-game directly.
 
-- This limitation can be overcome by using a hardware macro device such as an Arduino or a programmable keyboard. These devices emulate real keyboard input at the hardware level, making their key presses indistinguishable from those of a physical keyboard and undetectable as simulated input by the game.
+- To work around this, hardware macro devices can emulate real keyboard input, making the bot’s output indistinguishable from human input.
+
+## How It Works 
+- Chart Parsing: Reads a `.sm` and for each column in the chart it calculates the precise timing of the note and which rows of arrows to hit.
+- Bot (Playback + Input): Uses the parsed data to start a clock that tracks playback time. When the clock matches a note’s timing, the bot immediately simulates keypresses for all arrows in that note.
+
+## What I Learned
+From this project, I learned how to parse a custom file format with nested data structures, implement accurate playback timing and synchronization, apply basic music theory concepts for calculating note timings, and work with real-time input simulation.
+
