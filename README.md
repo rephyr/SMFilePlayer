@@ -13,14 +13,13 @@ This project parses `.sm` files and plays them back perfectly. To achieve this t
 I play a lot of rythm games that use `.sm` charts. I searched online but couldn’t find a bot like this, so I decided to build one myself. 
 
 ## Usage
-
+ **Prepare your chart:**  
+   Place your `.sm` file in the `Charts/` directory and update the path in `main.cpp`.
+   
  **Build the bot:**
    ```sh
    g++ -std=c++17 -I./Include -o EtternaBot src/main.cpp src/Parser.cpp src/Bot.cpp
    ```
-
- **Prepare your chart:**  
-   Place your `.sm` file in the `Charts/` directory and update the path in `main.cpp`.
 
  **Run the bot:**  
    ```sh
