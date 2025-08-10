@@ -1,4 +1,4 @@
-# SMfilePlayer 
+# SMFilePlayer 
 
 SMfilePlayer is a parser and playback engine for `.sm` rhythm game charts.
 
