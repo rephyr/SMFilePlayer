@@ -1,6 +1,6 @@
 # SMfilePlayer 
 
-SMfilePlater is a parser and playback engine for `.sm` rhythm game charts.
+SMfilePlayer is a parser and playback engine for `.sm` rhythm game charts.
 
 This project parses `.sm` files and plays them back perfectly. To achieve this the project includes:
 
