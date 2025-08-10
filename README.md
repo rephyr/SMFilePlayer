@@ -1,15 +1,16 @@
-## EtternaBot is a Windows-based bot framework for parsing and playing StepMania/Etterna `.sm` chart files.
+# SMfilePlayer 
 
-## How It Works
+SMfilePlayer is a parser and playback engine for `.sm` rhythm game charts.
 
- **Chart Parsing:**  
-   The bot reads a `.sm` file, extracts note rows, and calculates the exact time each note should be played.
+This project parses `.sm` files and plays them back perfectly. To achieve this the project includes:
 
- **Synchronization:**  
-   Press F8 to start the bot. After a short delay, the bot sends Enter to start the chart in-game and begins playing notes in sync.
+- Chart parsin logic
 
- **Key Simulation:**  
-   The bot uses the Windows API to simulate keypresses for each note (Q, W, E, R for columns, Enter to start).
+- Playback engine with timing synchronization
+
+## Why I Built This
+
+I play a lot of rythm games that use `.sm` charts. I searched online but couldn’t find a bot like this, so I decided to build one myself. 
 
 ## Usage
 
@@ -19,14 +20,27 @@
    ```
 
  **Prepare your chart:**  
-   Place your `.sm` file in the `Charts/` directory and update the path in `main.cpp` if needed.
+   Place your `.sm` file in the `Charts/` directory and update the path in `main.cpp`.
 
  **Run the bot:**  
    ```sh
-   EtternaBot.exe
+   ./EtternaBot
    ```
 ## Limitations
 
--  Etterna/StepMania block simulated input for anti-cheat reasons. So this bot cannot be used in game as is. 
+- The bot cannot be used directly in games like Etterna or StepMania because they implement software-level anti-cheat measures that block simulated keyboard inputs.
 
-- This limitation can be overcome by using a hardware macro device such as an Arduino or a programmable keyboard. These devices emulate real keyboard input at the hardware level, making their key presses indistinguishable from those of a physical keyboard and undetectable as simulated input by the game.
+- To bypass these limitations, a hardware input emulator is needed to send physical keypresses indistinguishable from real ones.
+  
+- The parser currently supports only  `.sm` files with a single BPM and no complex timing changes like stops or multiple BPM changes.
+
+## How It Works 
+
+This project consists of three main parts that work together to parse and play .sm rhythm game charts:
+
+- Parser: Reads the .sm file, extracting chart metadata (like BPM and offset) and note data organized by difficulty. It breaks the chart into measures, converts notes into a normalized format, and calculates precise real-time timestamps for each note based on BPM and measure position.
+- Bot: Acts as the playback engine and input simulator. It maps notes (strings like "1000") to specific keyboard keys (Q, W, E, R), starts a high-precision timer, and waits until the exact moment to simulate key presses for each note. The bot uses Windows’ SendInput with scan codes to emulate keyboard input, attempting to bypass game anti-cheat systems. Playback can be stopped at any time by pressing ESC.
+- Main: Coordinates the process by loading the chart, collecting parsed notes and timings, registering a hotkey (F8) to start playback, and giving the user a few seconds to focus the game window before triggering the bot to press Enter and begin playing the chart automatically.
+
+## What I Learned
+Through this project, I gained experience parsing a custom, nested file format and converting raw chart data into timed events. I implemented precise playback timing and synchronization using high-resolution clocks. Additionally, I applied fundamental music theory concepts to calculate note timings accurately.
