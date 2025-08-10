@@ -28,14 +28,19 @@ I play a lot of rythm games that use `.sm` charts. I searched online but couldn�
    ```
 ## Limitations
 
-- Etterna/StepMania implement anti-cheat measures that block simulated input, so this bot cannot be used in-game directly.
+- The bot cannot be used directly in games like Etterna or StepMania because they implement software-level anti-cheat measures that block simulated keyboard inputs.
 
-- To work around this, hardware macro devices can emulate real keyboard input, making the bot’s output indistinguishable from human input.
+- To bypass these limitations, a hardware input emulator is needed to send physical keypresses indistinguishable from real ones.
+  
+- The parser currently supports only  `.sm` files with a single BPM and no complex timing changes like stops or multiple BPM changes.
 
 ## How It Works 
-- Chart Parsing: Reads a `.sm` and for each column in the chart it calculates the precise timing of the note and which rows of arrows to hit.
-- Bot (Playback + Input): Uses the parsed data to start a clock that tracks playback time. When the clock matches a note’s timing, the bot immediately simulates keypresses for all arrows in that note.
+
+This project consists of three main parts that work together to parse and play .sm rhythm game charts:
+
+- Parser: Reads the .sm file, extracting chart metadata (like BPM and offset) and note data organized by difficulty. It breaks the chart into measures, converts notes into a normalized format, and calculates precise real-time timestamps for each note based on BPM and measure position.
+- Bot: Acts as the playback engine and input simulator. It maps notes (strings like "1000") to specific keyboard keys (Q, W, E, R), starts a high-precision timer, and waits until the exact moment to simulate key presses for each note. The bot uses Windows’ SendInput with scan codes to emulate keyboard input, attempting to bypass game anti-cheat systems. Playback can be stopped at any time by pressing ESC.
+- Main: Coordinates the process by loading the chart, collecting parsed notes and timings, registering a hotkey (F8) to start playback, and giving the user a few seconds to focus the game window before triggering the bot to press Enter and begin playing the chart automatically.
 
 ## What I Learned
-From this project, I learned how to parse a custom file format with nested data structures, implement accurate playback timing and synchronization, apply basic music theory concepts for calculating note timings, and work with real-time input simulation.
-
+Through this project, I gained experience parsing a custom, nested file format and converting raw chart data into timed events. I implemented precise playback timing and synchronization using high-resolution clocks. Additionally, I applied fundamental music theory concepts to calculate note timings accurately.
