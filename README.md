@@ -35,6 +35,8 @@ I play a lot of rythm games that use `.sm` charts. I searched online but couldnâ
 - The parser currently supports only  `.sm` files with a single BPM and no complex timing changes like stops or multiple BPM changes.
 
 ## How It Works 
+<p>Parser output:</p>
+<img src="Images/ParserOutput.PNG" alt="Parser Diagram" width="150"/>
 
 This project consists of three main parts that work together to parse and play .sm rhythm game charts:
 
