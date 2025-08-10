@@ -38,7 +38,7 @@ I play a lot of rythm games that use `.sm` charts. I searched online but couldnâ
 <p>Parser output and Bot playing .sm chart:</p>
 <div style="white-space: nowrap;">
   <img src="Images/ParserOutput.PNG" alt="Parser Diagram" width="150" style="display: inline-block; vertical-align: middle; margin-right: 20px;">
-  <img src="Images/PlaybackExample.gif" alt="Bot playing .sm chart" width="850" style="display: inline-block; vertical-align: middle;">
+  <img src="Images/PlaybackExample.gif" alt="Bot playing .sm chart" width="849" style="display: inline-block; vertical-align: middle;">
 </div>
 
 
