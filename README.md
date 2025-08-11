@@ -10,8 +10,7 @@ This project parses `.sm` files and plays them back perfectly. To achieve this t
 
 ## Why I Built This
 
-I play a lot of rythm games that use `.sm` charts. I wondered if anyone had made somehing like this. I searched online but couldn’t find a bot like this, so I decided to build one myself. 
-
+I play a lot of rhythm games that use `.sm` charts, and I wondered if anyone had made a bot like this before. After searching online and finding nothing, I decided to build one myself.
 ## Usage
  **Prepare your chart:**  
    Place your `.sm` file in the `Charts/` directory and update the path in `main.cpp`.
