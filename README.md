@@ -35,9 +35,9 @@ I play a lot of rhythm games that use `.sm` charts, and I wondered if anyone had
 ## How It Works 
 <p>Parser output and Bot playing .sm chart:</p>
 <p align="center">
-  <img src="Images/ParserOutput.PNG" alt="Parser Diagram" width="170">
+  <img src="Images/ParserOutput.PNG" alt="Parser Diagram" width="160">
   &nbsp;&nbsp;&nbsp;
-  <img src="Images/PlaybackExample.gif" alt="Bot playing .sm chart" width="708">
+  <img src="Images/PlaybackExample.gif" alt="Bot playing .sm chart" width="666">
 </p>
 This project consists of three main parts that work together to parse and play .sm rhythm game charts:
 
