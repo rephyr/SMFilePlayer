@@ -36,7 +36,7 @@ I play a lot of rhythm games that use `.sm` charts, and I wondered if anyone had
 <p>Parser output and Bot playing .sm chart:</p>
 <div style="white-space: nowrap;">
   <img src="Images/ParserOutput.PNG" alt="Parser Diagram" width="150" style="display: inline-block; vertical-align: middle; margin-right: 20px;">
-  <img src="Images/PlaybackExample.gif" alt="Bot playing .sm chart" width="600" style="display: inline-block; vertical-align: middle;">
+  <img src="Images/PlaybackExample.gif" alt="Bot playing .sm chart" width="650" style="display: inline-block; vertical-align: middle;">
 </div>
 
 This project consists of three main parts that work together to parse and play .sm rhythm game charts:
