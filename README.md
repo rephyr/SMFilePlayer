@@ -34,11 +34,10 @@ I play a lot of rhythm games that use `.sm` charts, and I wondered if anyone had
 
 ## How It Works 
 <p>Parser output and Bot playing .sm chart:</p>
-<p align="center">
-  <img src="Images/ParserOutput.PNG" alt="Parser Diagram" width="160">
-  &nbsp;&nbsp;&nbsp;
-  <img src="Images/PlaybackExample.gif" alt="Bot playing .sm chart" width="666">
-</p>
+<div style="white-space: nowrap;" >
+  <img src="Images/ParserOutput.PNG" alt="Parser Diagram" width="150" style="display: inline-block; vertical-align: middle; margin-right: 20px;">
+  <img src="Images/PlaybackExample.gif" alt="Bot playing .sm chart" width="625" style="display: inline-block; vertical-align: middle;">
+</div>
 This project consists of three main parts that work together to parse and play .sm rhythm game charts:
 
 - Parser: Reads the .sm file, extracting chart metadata (like BPM and offset) and note data organized by difficulty. It breaks the chart into measures, converts notes into a normalized format, and calculates precise real-time timestamps for each note based on BPM and measure position.
